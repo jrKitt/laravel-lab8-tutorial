@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\projectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,8 +26,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
     Route::get('/lab', [LabController::class, ('index')]);
+    Route::get('projects', [projectController::class, ('index')]);
 });
 
 
